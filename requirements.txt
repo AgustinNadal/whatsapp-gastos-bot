@@ -1,5 +1,6 @@
 flask
+gunicorn
 twilio
 python-dotenv
 matplotlib
-pandas
+requests

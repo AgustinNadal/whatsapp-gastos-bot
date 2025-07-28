@@ -3,10 +3,10 @@ import base64
 from dotenv import load_dotenv
 import os
 
-# Cargar variables del archivo .env
+
 load_dotenv()
 
-API_KEY = os.getenv("IMGBB_API_KEY")  # Usamos variable de entorno para la API key
+API_KEY = os.getenv("IMGBB_API_KEY")
 
 def subir_imagen_imgbb(path):
     if not API_KEY:
@@ -37,10 +37,3 @@ def subir_imagen_imgbb(path):
         print(f"Error al subir la imagen: {response.status_code} - {response.text}")
         return None
 
-
-# Testeo rápido
-if __name__ == "__main__":
-    ruta_prueba = "IMG_6374.jpg"  # Cambiar por una imagen válida para test
-    url = subir_imagen_imgbb(ruta_prueba)
-    if url:
-        print("Imagen subida con éxito:", url)

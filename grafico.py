@@ -13,7 +13,7 @@ def generar_grafico_resumen(numero_usuario):
     cursor = conn.cursor()
 
     ahora = datetime.now()
-    mes_actual = f"{ahora.month:02d}"  # formato '07'
+    mes_actual = f"{ahora.month:02d}"
     anio_actual = str(ahora.year)
 
     cursor.execute("""

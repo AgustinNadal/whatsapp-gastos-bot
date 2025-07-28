@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 @app.route("/webhook", methods=["POST"])
 def webhook():
-    sender = request.form.get("From", "")  # ej: whatsapp:+5491123456789
+    sender = request.form.get("From", "")
     message = request.form.get("Body", "").strip()
     celular = sender.replace("whatsapp:", "")
     resp = MessagingResponse()
@@ -92,4 +92,5 @@ def es_saludo(texto):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=int(os.getenv("PORT", 5000)))
+
